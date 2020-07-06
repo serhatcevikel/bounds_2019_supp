@@ -67,6 +67,7 @@ cranlist <- c(
 "WVPlots"
 )    
 
+    githublist <- c("rstudio/d3heatmap")
             
     ## cran packages
     for (package in cranlist)
@@ -74,6 +75,15 @@ cranlist <- c(
         if (!require(package, character.only = T, quietly = T))
         {
             install.packages(package)
+        }
+    }
+
+## github packages
+    for (package in githublist)
+    { 
+        if (!require(package, character.only = T, quietly = T))
+        {
+            devtools::install_github(package)
         }
     }
 

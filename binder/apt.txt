@@ -4,3 +4,4 @@ libcairo2-dev
 gdebi-core
 libudunits2-dev
 libssl-dev
+libglu1-mesa-dev
