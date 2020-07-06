@@ -2,6 +2,8 @@
 FROM gesiscss/binder-serhatcevikel-2dbounds-5f2019-5fsupp-107a8c:0ff6ba2e5e4622375f0ca47a1ae5559bb8e5f680
 LABEL maintainer="serhatcevikel@yahoo.com"
 
+USER root
+
 RUN echo "jovyan:jovyan" | chpasswd && \
     usermod -aG sudo ${NB_USER} && \
     echo "jovyan ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/jovyan; \
