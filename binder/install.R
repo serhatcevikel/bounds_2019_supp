@@ -23,6 +23,7 @@ cranlist <- c(
 "grid",
 "gridExtra",
 "htmlTable",
+"IRdisplay",
 "kableExtra",
 "kernlab",
 "knitr",
