@@ -8,9 +8,9 @@ library(plotly) # for interactive visualization
 library(knitr)
 library(kableExtra)
 library(shiny)
-library(rgl)
-library(plot3Drgl)
-library(shinyRGL)
+#library(rgl)
+#library(plot3Drgl)
+#library(shinyRGL)
 library(pander)
 library(splines)
 library(visreg)
@@ -18,7 +18,7 @@ library(grid)
 library(gridExtra)
 library(stargazer)
 library(corrplot)
-library(psych)
+#library(psych)
 library(fastDummies)
 library(IRdisplay)
 
@@ -59,51 +59,51 @@ p2 <- ggplot(house_sub, aes(x = 0, y = house_sub[[var_1]])) +
   
 subplot(p1a, p2, nrows = 1)
 
-var_11 <- vars[1] # first variable selected
-var_12 <- vars[2] # second variable selected
-var_10 <- 5 # number of bins
+#var_11 <- vars[1] # first variable selected
+#var_12 <- vars[2] # second variable selected
+#var_10 <- 5 # number of bins
 
-var_11
-var_12
-var_10
+#var_11
+#var_12
+#var_10
 
-house_sub <- house_prices
-
-x2 <- house_sub[[var_11]]
-y2 <- house_sub[[var_12]]
-labx <- var_11
-laby <- var_12
-bins <- var_10
-
+#house_sub <- house_prices
+#
+#x2 <- house_sub[[var_11]]
+#y2 <- house_sub[[var_12]]
+#labx <- var_11
+#laby <- var_12
+#bins <- var_10
+#
 ##  Create cuts:
-x_c <- cut(x2, as.integer(bins))
-y_c <- cut(y2, as.integer(bins))
-
+#x_c <- cut(x2, as.integer(bins))
+#y_c <- cut(y2, as.integer(bins))
+#
 ##  Calculate joint counts at cut levels:
-z1 <- table(x_c, y_c)
-
+#z1 <- table(x_c, y_c)
+#
 ## Calculate break points
-breaks <- function(vec) (max(vec) - min(vec)) / bins * 1:bins + min(vec)
-
-xb <- breaks(x2)
-yb <- breaks(y2)
-
+#breaks <- function(vec) (max(vec) - min(vec)) / bins * 1:bins + min(vec)
+#
+#xb <- breaks(x2)
+#yb <- breaks(y2)
+#
 ##  Plot as a 3D histogram:
-hist3D1 <- plot3Drgl::hist3Drgl(x = xb,
-                              y = yb,
-                              z = z1,
-                              axes = T,
-                              label = T,
-                              xlab = labx,
-                              ylab = laby,
-                              zlab = "frequencies",
-                              nticks = bins,
-                              ticktype = "detailed"
-                              )
+#hist3D1 <- plot3Drgl::hist3Drgl(x = xb,
+#                              y = yb,
+#                              z = z1,
+#                              axes = T,
+#                              label = T,
+#                              xlab = labx,
+#                              ylab = laby,
+#                              zlab = "frequencies",
+#                              nticks = bins,
+#                              ticktype = "detailed"
+#                              )
 #hist3D1
-scene <- scene3d()
+#scene <- scene3d()
 #rgl::rglwidget()
-rgl::rglwidget(scene)
+#rgl::rglwidget(scene)
 
 var_21 <- vars[1] # selected variable
 var_21
@@ -247,6 +247,6 @@ corrplot::corrplot.mixed(upper = "ellipse",
                          lower.col = "black",
                          tl.cex = 0.7)
 
-house_prices %>% psych::pairs.panels()
+#house_prices %>% psych::pairs.panels()
 
 
