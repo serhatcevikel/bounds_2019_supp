@@ -1,0 +1,78 @@
+cranlist <- c(
+"BBmisc",
+"C50",
+"caret",
+"class",
+"cluster",
+"corrplot",
+"d3heatmap",
+"DataExplorer",
+"data.table",
+"dendextend",
+"devtools",
+"DT",
+"e1071",
+"factoextra",
+"FactoMineR",
+"fastcluster",
+"fastDummies",
+"gains",
+"ggcorrplot",
+"ggpubr",
+"gmodels",
+"grid",
+"gridExtra",
+"htmlTable",
+"kableExtra",
+"kernlab",
+"knitr",
+"leaps",
+"learnr",
+"lift",
+"lindia",
+"listviewer",
+"MASS",
+"microbenchmark",
+"NbClust",
+"pander",
+"pixiedust",
+"plot3D",
+"plot3Drgl",
+"plotly",
+"plotROC",
+"plyr",
+"printr",
+"pROC",
+"psych",
+"randomcoloR",
+"revealjs",
+"rgl",
+"rmarkdown",
+"ROCR",
+"rpart",
+"rpart.plot",
+"rpivotTable",
+"shiny",
+"shinyRGL",
+"shinyWidgets",
+"splines",
+"stargazer",
+"tidymodels",
+"tidyverse",
+"vcd",
+"visNetwork",
+"visreg",
+"widgetframe",
+"WVPlots"
+)    
+
+            
+    ## cran packages
+    for (package in cranlist)
+    { 
+        if (!require(package, character.only = T, quietly = T))
+        {
+            install.packages(package)
+        }
+    }
+
